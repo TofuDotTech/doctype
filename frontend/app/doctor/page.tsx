@@ -3,6 +3,8 @@ import { useState } from "react";
 import { FieldValues, SubmitHandler, set, useForm } from "react-hook-form";
 import Link from "next/link";
 import axios from "axios";
+import { useRef } from "react";
+import test from "node:test";
 const backend = process.env.NEXT_PUBLIC_API_URL;
 
 interface IExpediente {
@@ -23,14 +25,22 @@ export default function Doctor() {
   const [responded, setResponded] = useState(false);
   const [resultados, setResultados] = useState([] as IExpediente[]);
   const [isLoadingResult, setIsLoadingResult] = useState(false);
+  const currentQuery = useRef("");
 
   const onsubmit: SubmitHandler<FieldValues> = (data) => {
+    const test_query = data.query.replaceAll(" ", "");
+    if (test_query === currentQuery.current) {
+      setResponded(true);
+      setIsLoadingResult(false);
+      return;
+    }
     const url = `${backend}doctor`;
     setIsLoadingResult(true);
     axios
       .post(url, { query: data.query })
       .then((res) => {
         setResultados(res.data.results);
+        currentQuery.current = data.query.replaceAll(" ", "");
         setResponded(true);
       })
       .finally(() => {
@@ -170,7 +180,7 @@ export default function Doctor() {
                     <h1 className="text-primary text-base font-bold">
                       EXPEDIENTE
                     </h1>
-                    <section className="bg-greendiagnosis p-1 rounded-2xl text-white w-32 text-center my-3">
+                    <section className="bg-greendiagnosis p-1 rounded-2xl text-white w-40 text-center my-3">
                       {result.diagnostic.toUpperCase()}
                     </section>
                     <h1 className="text-primary text-base font-bold">
