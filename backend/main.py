@@ -3,6 +3,7 @@ from softtek_llm.schemas import Vector
 from fridaConfig import embeddings_model, vector_store, chatbot
 import wikipedia
 from flask_cors import CORS
+import uuid
 
 app = Flask(__name__)
 CORS(app)
@@ -13,7 +14,7 @@ def doctorPost():
     json = request.json
     query = json["query"]
     query_vector = Vector(embeddings=embeddings_model.embed(query), id=query)
-    search_vectors = vector_store.search(query_vector, top_k=3)
+    search_vectors = vector_store.search(query_vector, top_k=1)
     res_dic = {
         'results': []
     }
@@ -53,6 +54,18 @@ def pacientGet():
             "content": response.message.content
         })
     return res
+
+@app.route("/api/evaluacion", methods=["POST"])
+def evaluacionPost():
+    json = request.json
+    evaluacion = json["evaluacion"]
+    diagnostico = json["diagnostico"]
+    tratamiento = json["tratamiento"]
+    temp_embed = embeddings_model.embed(evaluacion)
+    temp_meta = {"diagnostic": diagnostico, "evaluation": evaluacion, "treatment": tratamiento}
+    temp_vector = Vector(embeddings=temp_embed, metadata=temp_meta, id=str(uuid.uuid1()))
+    vector_store.add([temp_vector])
+    return {"success:": True}
 
 if __name__ == "__main__":
     app.run()

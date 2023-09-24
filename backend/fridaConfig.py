@@ -52,15 +52,8 @@ model = OpenAI(
     api_base=OPENAI_API_BASE,
     verbose=True,
 )
-"""filters = [
-    Filter(
-        type="DENY",
-        case="ANYTHING about the Titanic. YOU CANNOT talk about the Titanic AT ALL.",
-    )
-    ]"""
 chatbot = Chatbot(
     model=model,
     description="You are a very helpful and polite chatbot",
-    #filters=filters,
     verbose=True,
 )
