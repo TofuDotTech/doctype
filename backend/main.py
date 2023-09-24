@@ -17,15 +17,15 @@ def doctorPost():
     res_dic = {
         'results': []
     }
-    evaluation = vector.metadata["evaluation"]
-    treatment = vector.metadata["treatment"]
-    evaluation_response = chatbot.chat(
-        "Resume la siguiente evaluación de un paciente para un médico: " + evaluation
-    )
-    treatment_response = chatbot.chat(
-        "Resume el siguiente tratamiento que se le dio a un paciente para un médico: " + treatment
-    )
     for vector in search_vectors:
+        evaluation = vector.metadata["evaluation"]
+        treatment = vector.metadata["treatment"]
+        evaluation_response = chatbot.chat(
+            "Resume la siguiente evaluación de un paciente para un médico: " + evaluation
+        )
+        treatment_response = chatbot.chat(
+            "Resume el siguiente tratamiento que se le dio a un paciente para un médico: " + treatment
+        )
         temp = {
             "id": vector.id,
             "evaluation": evaluation_response.message.content,
