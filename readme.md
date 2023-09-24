@@ -10,7 +10,7 @@ Web app que facilita a los doctores y personal del sector medico la busqueda de 
 ## Retroalimenta el algoritmo con la nueva información de un paciente protegiendo su privacidad
 ![nuevo](https://github.com/TofuDotTech/doctype/assets/66339246/2c4cb9bc-d035-4373-8f33-c5e35183942e)
 
-###Tech stack
+### Tech stack
 <ul>
   <li>Next TS</li>
   <li>Flask</li>
