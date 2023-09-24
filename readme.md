@@ -2,12 +2,12 @@
 Web app que facilita a los doctores y personal del sector medico la busqueda de sintomas, sus diagnosticos y tratamientos. A los pacientes les brinda un resumen entendible y no técnico sobre enfermedades potenciado por Generative AI
 
 ## Ingresa la evaluación médica y obtén el diagnóstico y tratamiento de un caso similar.
-https://github.com/TofuDotTech/doctype/assets/66339246/73ccc222-2b43-4fd7-806a-6f083ee0cbf8
-
-
+![doctype_principal](https://github.com/TofuDotTech/doctype/assets/66339246/f1a644d2-d7e9-4f9e-904f-9f49504e2368)
 
 ## Busca un padecimiento y obten un resumen fácil de entender
-![paciente](https://github.com/TofuDotTech/doctype/assets/66339246/3c56ab1d-ffcd-4e0b-bb88-06e36c8c6a6c)
+![padecimiento](https://github.com/TofuDotTech/doctype/assets/66339246/c4ea02d0-4e53-49fb-8d99-764535c050b5)
+
 
 ## Retroalimenta el algoritmo con la nueva información de un paciente protegiendo su privacidad
-![nuevo expediente](https://github.com/TofuDotTech/doctype/assets/66339246/77b8fa75-2b5c-4291-a276-2a0a7d088d98)
+
+![nuevo](https://github.com/TofuDotTech/doctype/assets/66339246/2c4cb9bc-d035-4373-8f33-c5e35183942e)
