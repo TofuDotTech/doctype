@@ -11,3 +11,9 @@ Web app que facilita a los doctores y personal del sector medico la busqueda de 
 ## Retroalimenta el algoritmo con la nueva información de un paciente protegiendo su privacidad
 
 ![nuevo](https://github.com/TofuDotTech/doctype/assets/66339246/2c4cb9bc-d035-4373-8f33-c5e35183942e)
+
+### Flujo doctor
+![WhatsApp Image 2023-09-24 at 10 25 01](https://github.com/TofuDotTech/doctype/assets/66339246/dfcdc287-9357-4c82-b311-61f5a0015f75)
+
+### Flujo paciente
+![WhatsApp Image 2023-09-24 at 10 27 23](https://github.com/TofuDotTech/doctype/assets/66339246/e2f07ec8-0fe2-481a-9658-714a2e285a27)
