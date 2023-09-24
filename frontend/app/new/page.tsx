@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
+import axios from "axios";
 
+//api/evaluacion [POST] -> {evaluacion, diagnostico, tratamiento}
+const backend = process.env.NEXT_PUBLIC_API_URL;
 export default function New() {
   const {
     register,
@@ -10,7 +13,12 @@ export default function New() {
   } = useForm<FieldValues>();
 
   const onsubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+    const url  = backend + "evaluacion";
+    console.log(data)
+    axios.post(url, data).then((res) => {
+      console.log(res);
+      alert("Expediente registrado (:");
+    });
   };
 
   return (

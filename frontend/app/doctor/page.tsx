@@ -59,7 +59,7 @@ export default function Doctor() {
       )}
       <form className="flex w-full max-w-3xl" onSubmit={handleSubmit(onsubmit)}>
         <textarea
-          placeholder="Busca sintomas"
+          placeholder="Describe la evaluación del paciente"
           {...register("query", { required: true })}
           onFocus={() => {
             setResponded(false);
