@@ -2,8 +2,10 @@ from flask import Flask, request
 from softtek_llm.schemas import Vector
 from fridaConfig import embeddings_model, vector_store, chatbot
 import wikipedia
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 wikipedia.set_lang("es")
 
 @app.route("/api/doctor", methods=["POST"])

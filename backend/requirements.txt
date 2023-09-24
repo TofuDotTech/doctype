@@ -1,3 +1,5 @@
 Flask
 git+https://github.com/Fridaplatform/SofttekLLMSDK.git
 wikipedia
+flask-cors
+python-dotenv
