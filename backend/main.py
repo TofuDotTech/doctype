@@ -42,10 +42,9 @@ def pacientGet():
     }
     for diagnostic in diagnostics:
         result = wikipedia.search(diagnostic, results = 1)[0]
-        page = wikipedia.page(result)
-        page_content = page.content
+        content = wikipedia.summary(result, sentences=10)
         response = chatbot.chat(
-            "Resume el siguiente contenido de una manera amigable para un paciente: " + page_content
+            "Resume el siguiente contenido de una manera amigable para un paciente en un parrafo y sin hablar de historia: " + content
         )
         res['content'].append({
             "diagnostic": diagnostic,
